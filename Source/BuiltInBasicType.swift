@@ -118,6 +118,10 @@ fileprivate let formatter: NumberFormatter = {
     formatter.usesGroupingSeparator = false
     formatter.numberStyle = .decimal
     formatter.maximumFractionDigits = 16
+    let identifierStr = Locale.current.identifier
+    if identifierStr.hasPrefix("ar") {//阿拉伯语
+        formatter.locale = Locale(identifier: "en")
+    }
     return formatter
 }()
 
